@@ -2,7 +2,7 @@ import sys
 import click
 from pyfiglet import figlet_format
 
-from cli.CapmParameters import CAPMParameters
+from finance-cli.CapmParameters import CAPMParameters
 from .tools import *
 from .capm import calculate_capm_values
 from .validators import StockValidator, DateValidator

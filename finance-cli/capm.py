@@ -1,4 +1,4 @@
-from cli.tools import *
+from finance-cli.tools import *
 
 INDEX_FORMAT = "Index Price ({})"
 STOCK_FORMAT = "Stock Price ({})"
