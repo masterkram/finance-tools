@@ -2,11 +2,14 @@ import sys
 import click
 from pyfiglet import figlet_format
 
-from finance-cli.CapmParameters import CAPMParameters
+from .CapmParameters import CAPMParameters
 from .tools import *
 from .capm import calculate_capm_values
 from .validators import StockValidator, DateValidator
 from PyInquirer import (Token, prompt, style_from_dict, print_json)
+
+import warnings
+warnings.filterwarnings("ignore")
 
 style = style_from_dict({
     Token.QuestionMark: '#fac731 bold',

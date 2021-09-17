@@ -2,9 +2,9 @@ from setuptools import setup
 setup(
     name = 'finance-tools',
     version = '0.1.0',
-    packages = ['finance-cli'],
+    packages = ['fincli'],
     entry_points = {
         'console_scripts': [
-            'finance-cli = finance-cli.__main__:main'
+            'fincli = fincli.__main__:main'
         ]
     })

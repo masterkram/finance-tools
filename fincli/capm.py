@@ -1,4 +1,4 @@
-from finance-cli.tools import *
+from fincli.tools import *
 
 INDEX_FORMAT = "Index Price ({})"
 STOCK_FORMAT = "Stock Price ({})"
@@ -37,4 +37,6 @@ def calculate_capm_values(params):
     populate_data_frame(data_frame, params, column_index, column_stock)
     print(data_frame.head())
     ret = generate_percent_change(data_frame)
-    return model(ret, column_index, column_stock)
+    result = model(ret, column_index, column_stock)
+    regressionPlot(ret, result, column_index, column_stock)
+    return result

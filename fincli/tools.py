@@ -2,6 +2,9 @@ import pandas as pd
 import pandas_datareader as web
 import datetime
 import statsmodels.api as sm
+import matplotlib.pyplot as plt
+import time
+plt.style.use('fivethirtyeight')
 
 
 def read_price_data(stock_symbol, start_date, end_date, interval):
@@ -73,3 +76,14 @@ def model(df, column_index, column_stock):
     regression = sm.OLS(y, x_sm)
     results = regression.fit()
     return {"alpha": results.params[0], "beta": results.params[1], "r-squared": results.rsquared}
+
+
+def regressionPlot(df, params, column_index, column_stock):
+    plt.scatter(df[column_index], df[column_stock], marker='o')
+    plt.plot(df[column_index], params["beta"]*df[column_index] + params["alpha"])
+    plt.xlabel(column_stock)
+    plt.ylabel(column_index)
+    timestr = time.strftime("%Y%m%d-%H%M%S")
+    filename = 'img/CAPM-{}.png'.format(timestr)
+    plt.savefig(filename, bbox_inches='tight')
+    print("saved regression plot at {}".format(filename))
