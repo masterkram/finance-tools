@@ -26,8 +26,8 @@ cd finance-tools
 
 # finance tools cli is now installed on your machine
 # run it by typing in the name:
-finance-cli
+fincli
 
 # to uninstall run
-pip3 uninstall finance-cli
+pip3 uninstall fincli
 ```
